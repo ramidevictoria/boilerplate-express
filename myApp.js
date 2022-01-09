@@ -44,7 +44,7 @@ app.route('/name')
     res.send({name: `${req.query.first} ${req.query.last}`});
   })
   .post(function(req,res){
-    res.send({name: `${req.query.first} ${req.query.last}`});
+    res.send({name: `${req.body.first} ${req.body.last}`});
   });
 
 
