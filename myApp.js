@@ -1,3 +1,4 @@
+var bodyParser = require("body-parser");
 var express = require('express');
 var app = express();
 
@@ -9,6 +10,10 @@ app.use(function(req,res,next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
 	let path = `${__dirname}/views/index.html`;
